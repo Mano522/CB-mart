@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - CB MART</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="cb.css">
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+</head>
+
+<body>
+    <section id="header">
+        <a href="cb.html"><img src="Logo.jpeg" alt="Website Logo" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="cb.html">HOME</a></li>
+                <li><a class="active" href="shop.html">SHOP</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li><a href="s.html">🛍️</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <img src="image copy.png" width="100%" id="MainImg" alt="">
+
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="image copy.png" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="image copy 2.png" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="image copy 3.png" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="image copy 4.png" width="100%" class="small-img" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="single-pro-details">
+            <h6>Home / T-Shirt</h6>
+            <h4>Adidas Cotton T-shirt</h4>
+            <h2>₹599</h2>
+            <select>
+                <option>Select Size</option>
+                <option>XL</option>
+                <option>XXL</option>
+                <option>Small</option>
+                <option>Large</option>
+            </select>
+            <input type="number" value="1">
+            <div class="pro-btns">
+                <button class="normal" onclick="addToCart(productId)">Add To Cart</button>
+                <button class="buy-now" onclick="buyNow(productId)">Buy Now</button>
+            </div>
+            <h4>Product Details</h4>
+            <span>Elevate your everyday style with our Premium Cotton Comfort T-Shirt. Crafted from 100% long-staple
+                organic cotton, this shirt offers unparalleled softness and breathability. Its classic crew neck and
+                relaxed fit make it a versatile staple for any wardrobe. Whether you're layering it or wearing it solo,
+                the durable stitching ensures it holds its shape wash after wash. Available in a curated range of
+                timeless colors to suit any occasion.</span>
+        </div>
+    </section>
+
+    <section id="reviews" class="section-p1">
+        <h2>Customer Reviews</h2>
+        <div class="review-container">
+            <div class="review-box">
+                <div class="review-header">
+                    <div class="star">⭐️⭐️⭐️⭐️⭐️</div>
+                    <span class="review-date">Feb 10, 2026</span>
+                </div>
+                <p><strong>Rahul S.</strong> - "Amazing quality! The fabric is so soft and comfortable. Worth every
+                    penny."</p>
+            </div>
+            <div class="review-box">
+                <div class="review-header">
+                    <div class="star">⭐️⭐️⭐️⭐️</div>
+                    <span class="review-date">Jan 28, 2026</span>
+                </div>
+                <p><strong>Priya K.</strong> - "Good fit and fast delivery. The color is slightly different from the
+                    picture but still looks great."</p>
+            </div>
+            <div class="review-box">
+                <div class="review-header">
+                    <div class="star">⭐️⭐️⭐️⭐️⭐️</div>
+                    <span class="review-date">Jan 15, 2026</span>
+                </div>
+                <p><strong>Anish M.</strong> - "Perfect for daily use. I bought three different colors and all are
+                    excellent."</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter" class="section-p1">
+        <div class="newstext">
+            <h4>Sign Up For Newsletters</h4>
+            <p>Get E-mail updates about our latest shop and <span>Special offers....</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Enter Your Email">
+            <button class="white">Sign UP</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="footer-logo" src="Logo.jpeg" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Plot No 293/2,Gollahalli,Electronic City,Bengaluru-560100</p>
+            <p><strong>Phone No:</strong> +91 9704341511</p>
+            <p><strong>Working Hours:</strong> 10:00 AM to 10:00 PM (Monday-friday)</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="follow">
+                    <a href="https://www.instagram.com/mac_maharajaa?igsh=MWtxZ2doeXFtbmg1Zg=="><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/qr/X6B3K7R3YHZCP1"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/in/manoj-kumar-k-201155341"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="s.html">View cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From Google Play Store Or App Store</p>
+            <div class="roww">
+                <img src="appsd.png" alt="">
+            </div>
+            <p>Secured Payments </p>
+            <img src="paymm.png" alt=" ">
+        </div>
+        <div class="copyright">
+            <p>All Rights Reserved®</p>
+            <p> @2026 MacMaharajaa </p>
+        </div>
+    </footer>
+
+    <script>
+        // Get product ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id') || 'p1';
+        const product = products[productId];
+
+        if (product) {
+            // Update UI with product details
+            document.getElementById("MainImg").src = product.image;
+            document.querySelector(".single-pro-details h4").innerText = product.brand + " " + product.name;
+            document.querySelector(".single-pro-details h2").innerText = product.price;
+            document.querySelector(".single-pro-details span").innerText = product.description;
+            document.querySelector(".single-pro-details h6").innerText = "Home / " + product.name;
+
+            // Update small images (placeholders for now)
+            const smallImgs = document.getElementsByClassName("small-img");
+            for (let i = 0; i < smallImgs.length; i++) {
+                smallImgs[i].src = product.image;
+            }
+        }
+
+        var MainImg = document.getElementById("MainImg");
+        var smallimg = document.getElementsByClassName("small-img");
+
+        smallimg[0].onclick = function () {
+            MainImg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick = function () {
+            MainImg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick = function () {
+            MainImg.src = smallimg[2].src;
+        }
+        smallimg[3].onclick = function () {
+            MainImg.src = smallimg[3].src;
+        }
+    </script>
+</body>
+
+</html>

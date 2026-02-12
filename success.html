@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Success - CB MART</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="cb.css">
+</head>
+
+<body class="success-page">
+    <div class="success-card">
+        <div class="checkmark-wrapper">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+            </svg>
+        </div>
+        <h1>Order Placed!</h1>
+        <p>Your order has been placed successfully. <br> Thank you for shopping with CB MART!</p>
+        <div class="order-id-box">
+            <span>Order ID: #CB${Math.floor(Math.random() * 90000) + 10000}</span>
+        </div>
+        <button class="normal" onclick="window.location.href='cb.html'">Continue Shopping</button>
+    </div>
+
+    <script>
+        // Optional: Add some sparkle or confetti logic here if desired
+    </script>
+</body>
+
+</html>

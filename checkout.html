@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - CB MART</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="cb.css">
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+</head>
+
+<body>
+    <section id="header">
+        <a href="cb.html"><img src="Logo.jpeg" alt="Website Logo" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="cb.html">HOME</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li><a href="s.html">🛍️</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="page-header" class="about-header">
+        <h2>#checkout</h2>
+        <p>Complete your order securely</p>
+    </section>
+
+    <section id="checkout-container" class="section-p1">
+        <div class="checkout-form">
+            <h3>Shipping Details</h3>
+            <form id="order-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="text" placeholder="Street Address" required>
+                <div class="form-row">
+                    <input type="text" placeholder="City" required>
+                    <input type="text" placeholder="Zip Code" required>
+                </div>
+                <input type="text" placeholder="Phone Number" required>
+
+                <h3>Payment Method</h3>
+                <div class="payment-options">
+                    <label class="payment-opt">
+                        <input type="radio" name="payment" value="card" checked>
+                        <span>Credit/Debit Card</span>
+                    </label>
+                    <label class="payment-opt">
+                        <input type="radio" name="payment" value="upi">
+                        <span>UPI / QR Code</span>
+                    </label>
+                    <label class="payment-opt">
+                        <input type="radio" name="payment" value="cod">
+                        <span>Cash on Delivery</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="normal">Place Order</button>
+            </form>
+        </div>
+
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <div id="summary-items">
+                <!-- Items will be injected here -->
+            </div>
+            <div class="summary-total">
+                <div class="total-row">
+                    <span>Subtotal</span>
+                    <span id="summary-subtotal">₹0</span>
+                </div>
+                <div class="total-row">
+                    <span>Shipping</span>
+                    <span>Free</span>
+                </div>
+                <hr>
+                <div class="total-row grand-total">
+                    <span>Total</span>
+                    <span id="summary-total">₹0</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="footer-logo" src="Logo.jpeg" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Plot No 293/2,Gollahalli,Electronic City,Bengaluru-560100</p>
+            <p><strong>Phone No:</strong> +91 9704341511</p>
+            <p><strong>Working Hours:</strong> 10:00 AM to 10:00 PM (Monday-friday)</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="follow">
+                    <a href="https://www.instagram.com/mac_maharajaa?igsh=MWtxZ2doeXFtbmg1Zg=="><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/qr/X6B3K7R3YHZCP1"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/in/manoj-kumar-k-201155341"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="s.html">View cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From Google Play Store Or App Store</p>
+            <div class="roww">
+                <img src="appsd.png" alt="">
+            </div>
+            <p>Secured Payments </p>
+            <img src="paymm.png" alt=" ">
+        </div>
+        <div class="copyright">
+            <p>All Rights Reserved®</p>
+            <p> @2026 MacMaharajaa </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            renderOrderSummary();
+
+            document.getElementById("order-form").addEventListener("submit", (e) => {
+                e.preventDefault();
+                placeOrder();
+            });
+        });
+
+        function renderOrderSummary() {
+            const summaryContainer = document.getElementById("summary-items");
+            let subtotal = 0;
+
+            cart.forEach(item => {
+                const priceNum = parseInt(item.price.replace('₹', ''));
+                const itemTotal = priceNum * item.quantity;
+                subtotal += itemTotal;
+
+                summaryContainer.innerHTML += `
+                    <div class="summary-item">
+                        <span>${item.name} (x${item.quantity})</span>
+                        <span>₹${itemTotal}</span>
+                    </div>
+                `;
+            });
+
+            document.getElementById("summary-subtotal").innerText = "₹" + subtotal;
+            document.getElementById("summary-total").innerText = "₹" + subtotal;
+        }
+    </script>
+</body>
+
+</html>
